@@ -5,8 +5,7 @@
 var topics = ["surfing","travel","photography"];
 
 function renderButtons() {
-        //  <!-- <!-- We chose animals for our theme, but you can make a list to your own liking.
-        // Your app should take the topics in this array and create buttons in your HTML. -->
+        
  $("#topics-view").empty();
  for (var i = 0; i < topics.length; i++) {
      var a = $("<button>");
@@ -16,46 +15,71 @@ function renderButtons() {
        $("#topics-view").append(a);
         }
       }
-      $("#add-topic").on("click", function(event) {
+     
+ $("#add-topic").on("click", function(event) {
           event.preventDefault();
           var topic = $("#topic-input").val().trim();
           topics.push(topic);
            renderButtons();
-      });
-      renderButtons();
 
-
-
-    var topic = $(this).attr("data-name");
-      var queryURL = "put giphy API here";
+           var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=foreach&limit=25&offset=0&rating=G&lang=en";
 
       $.ajax({
           url: queryURL,
           method: "GET"
         }).then(function(response) {
-            var topicDiv = $("<div class='topic'>");
+            var topicsDiv = $("<div class='topic'>");
+            console.log(response);
+
+    //         .then(function(response) {
+    //       console.log(queryURL);
+
+          console.log(response);
+      });
+      
+      
+      renderButtons();
+
+
+
+    // $("button").on("click", function() {
+
+      // var topics = $(this).attr("data-name");
+    //   var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=foreach&limit=25&offset=0&rating=G&lang=en";
+
+    //   $.ajax({
+    //       url: queryURL,
+    //       method: "GET"
+    //     }).then(function(response) {
+    //         var topicsDiv = $("<div class='topic'>");
+    //         console.log(response);
+
+    // //         .then(function(response) {
+    // //       console.log(queryURL);
+
+    //       console.log(response);
 
           // Storing the rating data
-          var rating = response.Rated;
+          // var rating = response.rating;
 
           // Creating an element to have the rating displayed
-          var pOne = $("<p>").text("Rating: " + rating);
+          // var pOne = $("<p>").text("Rating: " + rating);
 
-          // Displaying the rating
-          topicDiv.append(pOne);
+          // // Displaying the rating
+          // topicsDiv.append(pOne);
 
           
-          // Creating an element to hold the image
-          var image = $("<img>").attr("src", imgURL);
+          // // Creating an element to hold the image
+          // var image = $("<img>").attr("src", imgURL);
 
-          // Appending the image
-          topicDiv.append(image);
+          // // Appending the image
+          // topicsDiv.append(image);
 
-          // Putting the entire movie above the previous movies
-          $("#topics-view").prepend(topicDiv);
+          // // Putting the entire item above the previous topic
+          // $("#topics-view").prepend(topicsDiv);
         });
 
-      }
+      
 
 
         // <!-- Try using a loop that appends a button for each string in the array.
