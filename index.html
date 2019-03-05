@@ -1,51 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="asset/css/style.css">
 </head>
+
 <body>
 
-        <!-- Before you can make any part of our site work, 
-        you need to create an array of strings, each one related to a topic that interests you. 
-        Save it to a variable called topics. -->
+    <div class="container">
+        <h1>Topics</h1>
+       
+        <div id="topics-view"></div>
 
-        var topics = ["surfing","skateboarding","travel"];
+        <form id="topic-form">
+            <label for="topic-input">New topic:</label>
+            <input type="text" id="topic-input"><br>
 
-        <!-- <!-- We chose animals for our theme, but you can make a list to your own liking.
-        Your app should take the topics in this array and create buttons in your HTML. -->
+            <input id="add-topic" type="submit" value="Add Topic">
+    </form>
 
+            
 
-        $("<button>"").on("click")
-
-        <!-- Try using a loop that appends a button for each string in the array.
-        When the user clicks on a button, the page should grab 10 static, 
-        non-animated gif images from the GIPHY API and place them on the page. -->
-
-        for(){};
-        
-        <!-- When the user clicks one of the still GIPHY images, the gif should animate. 
-        If the user clicks the gif again, it should stop playing. -->
-        
-        <!-- Under every gif, display its rating (PG, G, so on). -->
-        
-        <!-- This data is provided by the GIPHY API.
-        Only once you get images displaying with button presses should you move on to the next step.
-        Add a form to your page takes the value from a user input box and adds it into your topics array. 
-        Then make a function call that takes each topic in the array remakes the buttons on the page. -->
-        
-        <!-- Deploy your assignment to Github Pages. -->
-        
-        <!-- Rejoice! You just made something really cool.
-         --> 
-        
+      
 
 
 
 
 
-    
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- <script src="asset/js/script.js"></script> -->
+        <script src="asset/js/scratch.js"></script>
+
+
 </body>
+
 </html>
