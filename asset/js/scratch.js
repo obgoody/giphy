@@ -25,6 +25,39 @@ function renderButtons() {
       renderButtons();
 
 
+
+    var topic = $(this).attr("data-name");
+      var queryURL = "put giphy API here";
+
+      $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function(response) {
+            var topicDiv = $("<div class='topic'>");
+
+          // Storing the rating data
+          var rating = response.Rated;
+
+          // Creating an element to have the rating displayed
+          var pOne = $("<p>").text("Rating: " + rating);
+
+          // Displaying the rating
+          topicDiv.append(pOne);
+
+          
+          // Creating an element to hold the image
+          var image = $("<img>").attr("src", imgURL);
+
+          // Appending the image
+          topicDiv.append(image);
+
+          // Putting the entire movie above the previous movies
+          $("#topics-view").prepend(topicDiv);
+        });
+
+      }
+
+
         // <!-- Try using a loop that appends a button for each string in the array.
         // When the user clicks on a button, the page should grab 10 static, 
         // non-animated gif images from the GIPHY API and place them on the page. -->
