@@ -1,48 +1,7 @@
-var topics = ["surfing","travel","photography"];
 
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=topic&limit=10&offset=0&rating=PG&lang=en";
-
-function renderButtons() {
-        
- $("#topics-view").empty();
- for (var i = 0; i < topics.length; i++) {
-     var a = $("<button>");
-      a.addClass("topic");
-       a.attr("data-name", topics[i]);
-       a.text(topics[i]);
-       $("#topics-view").append(a);
-        }
-      };
-     
- $("#add-topic").on("click", function(event) {
-          event.preventDefault();
-          var topic = $("#topic-input").val().trim();
-          topics.push(topic);
-           renderButtons();
-
-          //  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=topic&limit=10&offset=0&rating=PG&lang=en";
-
-      $.ajax({
-          url: queryURL,
-          method: "GET"
-        }).then(function(response) {
-            var topicsDiv = $("<div class='topic'>");
-            console.log(response);
-
-          
-      });
-      
-      
-      renderButtons();
-      
-
-
-    
-        });
-        console.log("WORKS"); 
 function getGifs(random) {
     
-    var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=topic&limit=10&offset=0&rating=PG&lang=en";
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=TYk5OuT12bMUq3VU1XCnAktRF5o9pTJI&q=surfing&limit=10&offset=0&rating=G&lang=en";
 
     $.ajax({
         url: queryUrl,
@@ -76,8 +35,20 @@ function makeButtons() {
 
         // append the new button the #buttons div
         $("#buttons").append(btn);
+
+        // function renderButtons() {
+      
+ $("#topics-view").empty();
+ for (var i = 0; i < topics.length; i++) {
+     var a = $("<button>");
+      a.addClass("topic");
+       a.attr("data-name", topics[i]);
+       a.text(topics[i]);
+       $("#topics-view").append(a);
+        }
+      };
     }
-}
+// }
 makeButtons();
 
 // listen for the click .ran-btn

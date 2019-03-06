@@ -1,7 +1,7 @@
 console.log("WORKS"); 
 function getGifs(random) {
     
-    var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=topic&limit=10&offset=0&rating=PG&lang=en";
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=TYk5OuT12bMUq3VU1XCnAktRF5o9pTJI&q=surfing&limit=10&offset=0&rating=G&lang=en";
 
     $.ajax({
         url: queryUrl,
