@@ -1,8 +1,6 @@
-// <!-- Before you can make any part of our site work, 
-//         you need to create an array of strings, each one related to a topic that interests you. 
-//         Save it to a variable called topics. -->
-
 var topics = ["surfing","travel","photography"];
+
+var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=topic&limit=10&offset=0&rating=PG&lang=en";
 
 function renderButtons() {
         
@@ -14,7 +12,7 @@ function renderButtons() {
        a.text(topics[i]);
        $("#topics-view").append(a);
         }
-      }
+      };
      
  $("#add-topic").on("click", function(event) {
           event.preventDefault();
@@ -22,7 +20,7 @@ function renderButtons() {
           topics.push(topic);
            renderButtons();
 
-           var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=foreach&limit=25&offset=0&rating=G&lang=en";
+          //  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=topic&limit=10&offset=0&rating=PG&lang=en";
 
       $.ajax({
           url: queryURL,
@@ -31,52 +29,15 @@ function renderButtons() {
             var topicsDiv = $("<div class='topic'>");
             console.log(response);
 
-    //         .then(function(response) {
-    //       console.log(queryURL);
-
-          console.log(response);
+          
       });
       
       
       renderButtons();
+      
 
 
-
-    // $("button").on("click", function() {
-
-      // var topics = $(this).attr("data-name");
-    //   var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=bucq4iEwnp7zWO9BisyORctGCl805o2M&q=foreach&limit=25&offset=0&rating=G&lang=en";
-
-    //   $.ajax({
-    //       url: queryURL,
-    //       method: "GET"
-    //     }).then(function(response) {
-    //         var topicsDiv = $("<div class='topic'>");
-    //         console.log(response);
-
-    // //         .then(function(response) {
-    // //       console.log(queryURL);
-
-    //       console.log(response);
-
-          // Storing the rating data
-          // var rating = response.rating;
-
-          // Creating an element to have the rating displayed
-          // var pOne = $("<p>").text("Rating: " + rating);
-
-          // // Displaying the rating
-          // topicsDiv.append(pOne);
-
-          
-          // // Creating an element to hold the image
-          // var image = $("<img>").attr("src", imgURL);
-
-          // // Appending the image
-          // topicsDiv.append(image);
-
-          // // Putting the entire item above the previous topic
-          // $("#topics-view").prepend(topicsDiv);
+    
         });
 
       
