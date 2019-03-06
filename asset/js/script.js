@@ -31,7 +31,7 @@ function makeButtons() {
         // with a data-attribute of data-title
         btn.attr("data-title", random[i]);
         // add the class of btn btn-success
-        btn.addClass("btn btn-success ran-btn");
+        btn.addClass("btn btn-success show-btn");
 
         // append the new button the #buttons div
         $("#buttons").append(btn);
